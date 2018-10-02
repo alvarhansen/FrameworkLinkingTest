@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E4156DF921635FD500D4A500 /* MyFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E4156DF721635FD500D4A500 /* MyFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4156DFC21635FD500D4A500 /* MyFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4156DF521635FD500D4A500 /* MyFramework.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E4156DFC21635FD500D4A500 /* MyFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4156DF521635FD500D4A500 /* MyFramework.framework */; };
 		E4156DFD21635FD500D4A500 /* MyFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4156DF521635FD500D4A500 /* MyFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4156E032163600400D4A500 /* Foo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4156E022163600400D4A500 /* Foo.swift */; };
 		E4DC9AD8216351E100109D9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DC9AD7216351E100109D9A /* AppDelegate.swift */; };
@@ -422,6 +422,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					MyFramework,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FrameworkLinkingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -439,6 +443,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-weak_framework",
+					MyFramework,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FrameworkLinkingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
